@@ -32,6 +32,24 @@ public class webshop_test_hw1 {
         System.out.println(element_li.getText());
     }
 
+    @Test
+    public void findElementByCssSelector(){
+        driver.findElement(By.cssSelector("strong"));
+        driver.findElement(By.cssSelector("#bar-notification"));
+        driver.findElement(By.cssSelector(".close"));
+        driver.findElement(By.cssSelector(".ico-wishlist"));
+        driver.findElement(By.cssSelector(".block.block-popular-tags"));
+        driver.findElement(By.cssSelector("[title='Error']"));
+        driver.findElement(By.cssSelector("[href='/login']"));
+        //contains -> * (содержит)
+        driver.findElement(By.cssSelector("[href*='apparel']"));
+        //start -> ^ (в начале)
+        driver.findElement(By.cssSelector("[href^='/gift']"));
+        //end on -> $ (в конце)
+        driver.findElement(By.cssSelector("[href$='cards']"));
+        driver.findElement(By.cssSelector("[href$='shoes']"));
+    }
+
     @AfterMethod
     public void tearDown(){
         driver.quit();
