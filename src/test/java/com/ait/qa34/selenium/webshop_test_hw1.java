@@ -50,6 +50,23 @@ public class webshop_test_hw1 {
         driver.findElement(By.cssSelector("[href$='shoes']"));
     }
 
+    @Test
+    public void findElementByXpath(){
+        // xPath //*[@attr='value']
+        // always with //
+        driver.findElement(By.xpath("//strong"));
+        driver.findElement(By.xpath("//*[@id='bar-notification']"));
+        driver.findElement(By.xpath("//*[@class='close']"));
+        driver.findElement(By.xpath("//*[@class='ico-wishlist']"));
+        driver.findElement(By.xpath("//*[contains(@class, 'block') and contains(@class, 'block-popular-tags')]"));
+        driver.findElement(By.xpath("//*[contains(.,'Error')]"));
+        //., - just a text
+        driver.findElement(By.xpath("//*[contains(@href,'/login')]"));
+        driver.findElement(By.xpath("//*[contains(@href,'apparel')]"));
+        driver.findElement(By.xpath("//*[starts-with(@href,'/gift')]"));
+        driver.findElement(By.xpath("//*[contains(.,'shoes')]"));
+    }
+
     @AfterMethod
     public void tearDown(){
         driver.quit();
