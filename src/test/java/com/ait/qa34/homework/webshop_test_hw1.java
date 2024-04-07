@@ -1,25 +1,19 @@
-package com.ait.qa34.selenium;
+package com.ait.qa34.homework;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
+public class webshop_test_hw1 extends TestBase{
 
-public class webshop_test_hw1 {
-    WebDriver driver;
+    @Test
+    public void isHomeComponentPresentTest() {
+        Assert.assertTrue(isHomeComponentPresent());
+    }
 
-    @BeforeMethod
-
-    public void setUp(){
-        driver = new ChromeDriver();
-        driver.get("https://demowebshop.tricentis.com");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public boolean isHomeComponentPresent() {
+        return isElementPresent(By.cssSelector("div:nth-child(2) div h1"));
     }
 
     @Test
@@ -67,10 +61,6 @@ public class webshop_test_hw1 {
         driver.findElement(By.xpath("//*[contains(.,'shoes')]"));
     }
 
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
-    }
 }
 
 
