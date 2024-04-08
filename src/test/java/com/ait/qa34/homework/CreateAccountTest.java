@@ -1,6 +1,7 @@
 package com.ait.qa34.homework;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Random;
@@ -18,9 +19,12 @@ public class CreateAccountTest extends TestBase {
         type(By.id("Email"), "ecevarriahoma" + i + "@gmail.com");
         // enter password
         type(By.id("Password"), "ecevarriahoma1234$");
+        type(By.id("ConfirmPassword"), "ecevarriahoma1234$");
         // click Registration Button
         click(By.cssSelector(".button-1.register-button"));
-        // assert Sigh Out Button is present
+        // assert Sign Out Button is present
+        Assert.assertTrue(isElementPresent(By.id("register-button")));
+
     }
 
 }
