@@ -38,4 +38,39 @@ public class TestBase {
     public void click(By locator) {
         driver.findElement(locator).click();
     }
+
+    public void clickOnLoginLink() {
+        click(By.cssSelector("[href='/login']"));
+    }
+
+    public void feelLoginForm(User user) {
+        type(By.id("Email"), user.getEmail());
+        type(By.id("Password"), user.getPassword());
+    }
+    public void clickOnLoginButton(){
+        click(By.cssSelector(".button-1.login-button"));
+    }
+    public void addItemToCart(){
+        driver.findElement(By.cssSelector("[href='/141-inch-laptop']"));
+        driver.findElement(By.cssSelector(".button-2.product-box-add-to-cart-button"));
+        driver.findElement(By.cssSelector(".cart-label"));
+    }
+
+    public boolean isItemToCart(){
+        if(isElementPresent(By.cssSelector("[href='/141-inch-laptop']"))) {
+            driver.findElement(By.cssSelector("[href='/141-inch-laptop']"));
+            return true;
+        }
+        return false;
+    }
+
+    public void pause(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e){
+            throw new RuntimeException();
+        }
+    }
+
+
 }
