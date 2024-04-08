@@ -4,10 +4,14 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Random;
+
 public class AddAccountTest extends TestBase{
 
     @Test
     public void addAccountPositiveTest(){
+        Random random = new Random();
+        int i = random.nextInt(1000) + 1000;
         // click registration
         click(By.cssSelector("[href='/register']"));
         // click first name
@@ -15,7 +19,7 @@ public class AddAccountTest extends TestBase{
         // click last name
         type(By.id("LastName"), "Vasilev");
         // click Email
-        type(By.id("Email"), "vasjsav123@gmail.com");
+        type(By.id("Email"), "vasjsav"  + i + "123@gmail.com");
         // click password
         type(By.id("Password"), "Vasjasav$123");
         // click confirm password
