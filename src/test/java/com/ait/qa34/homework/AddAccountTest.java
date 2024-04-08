@@ -19,7 +19,7 @@ public class AddAccountTest extends TestBase{
         // click last name
         type(By.id("LastName"), "Vasilev");
         // click Email
-        type(By.id("Email"), "vasjsav"  + i + "123@gmail.com");
+        type(By.id("Email"), "vasjsav"  + i + "@gmail.com");
         // click password
         type(By.id("Password"), "Vasjasav$123");
         // click confirm password
